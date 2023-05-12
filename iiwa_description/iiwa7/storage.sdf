@@ -1,0 +1,201 @@
+<?xml version="1.0"?>
+<sdf version="1.7">
+  <model xmlns:drake="http://drake.mit.edu" name="iiwa7">
+  <!--
+    Here starts the addition of the links and joints to support 
+    movement along x and y axis with prismatic joints
+    and rotation around z axis with revolute joints.
+    In the end they are connected to the iiwa_link_0_original
+  -->
+  
+    <link name="iiwa_link_0">
+      <pose>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>0.0001</mass>
+        <inertia>
+          <ixx>0.0000001</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.0000001</iyy>
+          <iyz>0</iyz>
+          <izz>0.0000001</izz>
+        </inertia>
+      </inertial>
+      <!-- <visual name="iiwa_link_0_x_visual">
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>package://drake/manipulation/models/iiwa_description/iiwa7/link_0.obj</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.4 0.4 0.4 1.0</diffuse>
+        </material> 
+      </visual> -->
+      <gravity>1</gravity>
+    </link>
+
+    <!-- <link name="iiwa_link_0_x">
+      <pose>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>0.0001</mass>
+        <inertia>
+          <ixx>0.0000001</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.0000001</iyy>
+          <iyz>0</iyz>
+          <izz>0.0000001</izz>
+        </inertia>
+      </inertial>
+      <visual name="iiwa_link_0_x_visual">
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>package://drake/manipulation/models/iiwa_description/iiwa7/link_0.obj</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.4 0.4 0.4 1.0</diffuse>
+        </material> 
+      </visual>
+      <gravity>1</gravity>
+    </link> -->
+   
+        
+    <link name="iiwa_link_0_y">
+      <pose>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>0.0001</mass>
+        <inertia>
+          <ixx>0.0000001</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.0000001</iyy>
+          <iyz>0</iyz>
+          <izz>0.0000001</izz>
+        </inertia>
+      </inertial>
+      <!-- <visual name="iiwa_link_0_y_visual">
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>package://drake/manipulation/models/iiwa_description/iiwa7/link_0.obj</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.4 0.4 0.4 1.0</diffuse>
+        </material> 
+      </visual> -->
+      <gravity>1</gravity>
+    </link>
+  
+
+    <link name="iiwa_link_0_z">
+      <pose>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>0.0001</mass>
+        <inertia>
+          <ixx>0.0000001</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.0000001</iyy>
+          <iyz>0</iyz>
+          <izz>0.0000001</izz>
+        </inertia>
+      </inertial>
+      <!-- <visual name="iiwa_link_0_z_visual">
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>package://drake/manipulation/models/iiwa_description/iiwa7/link_0.obj</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.4 0.4 0.4 1.0</diffuse>
+        </material> 
+      </visual> -->
+      <gravity>1</gravity>
+    </link>
+
+    <link name="iiwa_link_0_original">
+      <inertial>
+        <pose>-0.0 0 0.0 0 0 0</pose>
+        <mass>0.001</mass>
+        <inertia>
+          <ixx>0.0000001</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.0000001</iyy>
+          <iyz>0</iyz>
+          <izz>0.0000001</izz>
+        </inertia>
+      </inertial>
+      <!-- <visual name="iiwa_link_0_visual">
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>package://drake/manipulation/models/iiwa_description/iiwa7/link_0.obj</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.4 0.4 0.4 1.0</diffuse>
+        </material>
+      </visual>
+      <gravity>1</gravity> -->
+    </link>
+
+      <!-- The END of the link addition -->
+
+    <!-- START OF JOINT ADDITION -->
+
+    <joint name="iiwa_joint_0_x" type="prismatic">
+      <child>iiwa_link_0_y</child>
+      <parent>iiwa_link_0</parent>
+      <!-- <origin rpy="0 0 0" xyz="0 0 0.0584"/> -->
+        <axis>
+        <xyz>1 0 0 </xyz>
+      </axis>      <!-- <limit effort="20" lower="0.0" upper="0.04" velocity="0.2"/> -->
+    </joint>
+
+    <joint name="iiwa_joint_0_y" type="prismatic">
+      <child>iiwa_link_0_z</child>
+      <parent>iiwa_link_0_y</parent>
+      <!-- <origin rpy="0 0 0" xyz="0 0 0.0584"/> -->
+      <axis>
+        <xyz>0 1 0 </xyz>
+      </axis>
+      <!-- <limit effort="20" lower="0.0" upper="0.04" velocity="0.2"/> -->
+    </joint>
+
+    <joint name="iiwa_joint_0_z" type="revolute">
+      <child>iiwa_link_0_original</child>
+      <parent>iiwa_link_0_z</parent>
+      <axis>
+        <xyz expressed_in="__model__">0 0 1</xyz>
+        <limit>
+          <lower>-0.5</lower>
+          <upper>0.5</upper>
+          <effort>300</effort>
+          <velocity>10</velocity>
+        </limit>
+        <dynamics>
+          <damping>0.0</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+
+    
+
+    <!-- END OF JOINT ADDITION -->
+
+    <static>0</static>
+  </model>
+</sdf>
