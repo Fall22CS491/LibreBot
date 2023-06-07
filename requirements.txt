@@ -1,0 +1,11 @@
+transformers
+torchvision
+numpy
+opencv_python
+matplotlib
+requests
+torchvision
+Pillow
+torch
+matplotlib
+setuptools
